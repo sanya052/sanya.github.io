@@ -392,41 +392,6 @@ h1.hero-name em{font-style:italic;}
 }
 .wip-note-hand{font-family:'Caveat',cursive;font-size:1.1rem;color:var(--ink2);}
 
-/* ─── ARTICLES ─── */
-.articles{background:var(--cream);}
-.articles-top{margin-bottom:3.5rem;}
-.articles-note{
-  max-width:420px;font-size:.88rem;line-height:1.75;
-  color:var(--ink2);font-weight:300;margin-top:.6rem;
-}
-.article-list{display:flex;flex-direction:column;}
-.article-item{
-  display:grid;grid-template-columns:56px 1fr 40px;
-  gap:1.8rem;align-items:center;
-  padding:1.8rem 0;
-  border-bottom:1px solid var(--sand2);
-  text-decoration:none;color:inherit;
-  transition:background .18s;
-}
-.article-item:first-child{border-top:1px solid var(--sand2);}
-.article-num{
-  font-family:'Caveat',cursive;
-  font-size:2.6rem;color:var(--terra-light);line-height:1;
-}
-.article-title{
-  font-family:'Lora',serif;
-  font-size:1.2rem;font-weight:400;color:var(--ink);
-  margin-bottom:.3rem;
-}
-.article-blurb{font-size:.8rem;color:var(--ink2);font-weight:300;line-height:1.65;}
-.article-pill{
-  background:var(--sand2);
-  font-family:'Caveat',cursive;
-  font-size:.95rem;color:var(--ink2);
-  padding:.2rem .6rem;
-  white-space:nowrap;text-align:center;
-}
-
 /* ─── CURRENTLY ─── */
 .currently{background:var(--terra-pale);}
 .currently-grid{
@@ -697,6 +662,7 @@ footer{
       <h4>Studying</h4>
       <p>Cloud computing, AI, and computer networks this semester. Trying to actually understand things, not just pass exams.</p>
     </div>
+  </div>
 </section>
 
 <!-- PORTFOLIO -->
@@ -752,8 +718,6 @@ footer{
   </div>
 </section>
 
-
-
 <!-- CONTACT -->
 <section class="s contact" id="contact">
   <div class="s-chip">👋 contact</div>
@@ -763,10 +727,10 @@ footer{
       <span class="hand-big">I'd love to hear from you.</span>
       <p>I'm actively looking for internship opportunities in data analytics and software development. If you're hiring, collaborating, or just want to say hi - reach out directly. I reply to every message.</p>
       <div class="contact-links">
-        <a href="mailto:sanyanigam0502@gmail.com" class="contact-link">
+        <a href="mailto:sanyanigam05@gmail.com" class="contact-link">
           <div>
             <div class="contact-link-label">Email</div>
-            <div class="contact-link-value">sanyanigam0502@gmail.com</div>
+            <div class="contact-link-value">sanyanigam05@gmail.com</div>
           </div>
           <span class="contact-link-arrow">↗</span>
         </a>
@@ -774,6 +738,13 @@ footer{
           <div>
             <div class="contact-link-label">LinkedIn</div>
             <div class="contact-link-value">linkedin.com/in/sanya</div>
+          </div>
+          <span class="contact-link-arrow">↗</span>
+        </a>
+        <a href="https://github.com/sanya052" target="_blank" class="contact-link">
+          <div>
+            <div class="contact-link-label">GitHub</div>
+            <div class="contact-link-value">github.com/sanya052</div>
           </div>
           <span class="contact-link-arrow">↗</span>
         </a>
@@ -823,7 +794,7 @@ footer{
     <span class="hand-note">made with care, one commit at a time ✦</span>
   </div>
   <ul class="footer-links">
-    <li><a href="mailto:sanyanigam0502@gmail.com">Email</a></li>
+    <li><a href="mailto:sanyanigam05@gmail.com">Email</a></li>
     <li><a href="https://www.linkedin.com/in/sanya-b427612b7" target="_blank">LinkedIn</a></li>
     <li><a href="#hero">Back to top ↑</a></li>
   </ul>
@@ -834,7 +805,8 @@ footer{
 const progressBar = document.getElementById('progress-bar');
 const nav = document.getElementById('main-nav');
 const navLinks = document.querySelectorAll('.nav-links a[data-section]');
-const sections = ['about','portfolio','articles','contact'];
+/* FIX: removed 'articles' which had no matching section */
+const sections = ['about','portfolio','contact'];
 
 window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY;
