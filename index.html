@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Sanya - Data & Dev</title>
+<title>Sanya — Data & Dev</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Caveat:wght@400;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -338,6 +338,7 @@ h1.hero-name em{font-style:italic;}
 .work-thumb-canva{background:linear-gradient(135deg,#ede8f8,#d8cff0);}
 .work-thumb-data{background:linear-gradient(135deg,#e4f0e4,#c8dfca);}
 .work-thumb-dev{background:linear-gradient(135deg,#f8ece4,#eacfbe);}
+.work-thumb-ai{background:linear-gradient(135deg,#e8f4f0,#c4ddd6);}
 .thumb-ltr{
   font-family:'Caveat',cursive;
   font-size:6rem;font-weight:600;
@@ -368,6 +369,76 @@ h1.hero-name em{font-style:italic;}
   text-decoration:none;
 }
 
+/* ─── TECH PILLS ─── */
+.tech-pills{
+  display:flex;flex-wrap:wrap;gap:.35rem;
+  margin-top:.9rem;
+}
+.tech-pill{
+  font-size:.68rem;letter-spacing:.04em;
+  background:var(--sand2);color:var(--ink2);
+  padding:.18rem .6rem;
+  border-radius:100px;
+  font-weight:400;
+}
+
+/* ─── INSIGHT QUOTE ─── */
+.insight-quote{
+  margin-top:1rem;
+  padding:.7rem 1rem;
+  background:var(--terra-pale);
+  border-left:3px solid var(--terra-light);
+  font-family:'Caveat',cursive;
+  font-size:1rem;
+  color:var(--ink2);
+  line-height:1.55;
+}
+
+/* ─── PROJECT ROLE TAGS ─── */
+.role-tags{
+  display:flex;gap:.5rem;flex-wrap:wrap;
+  margin-bottom:.9rem;
+}
+.role-tag{
+  font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  font-weight:500;padding:.22rem .7rem;
+  border-radius:2px;
+}
+.role-tag.sde{
+  background:rgba(90,114,80,.12);
+  color:var(--moss);
+  border:1px solid rgba(90,114,80,.25);
+}
+.role-tag.data{
+  background:rgba(196,98,58,.1);
+  color:var(--terra);
+  border:1px solid rgba(196,98,58,.22);
+}
+
+/* ─── HOW IT WORKS BREAKDOWN ─── */
+.how-it-works{
+  margin-top:1.2rem;
+  border-top:1px solid var(--sand2);
+  padding-top:1rem;
+}
+.how-it-works-label{
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink2);opacity:.5;font-weight:400;
+  margin-bottom:.65rem;
+}
+.how-steps{
+  display:flex;flex-direction:column;gap:.45rem;
+}
+.how-step{
+  display:flex;align-items:baseline;gap:.65rem;
+  font-size:.8rem;color:var(--ink2);font-weight:300;line-height:1.5;
+}
+.how-step-num{
+  font-family:'Caveat',cursive;
+  font-size:1.1rem;color:var(--terra-light);
+  flex-shrink:0;width:1.2rem;text-align:right;
+}
+
 /* ─── WIP badge on in-progress cards ─── */
 .wip-badge{
   display:inline-flex;align-items:center;gap:.35rem;
@@ -391,6 +462,41 @@ h1.hero-name em{font-style:italic;}
   display:flex;align-items:center;gap:1rem;
 }
 .wip-note-hand{font-family:'Caveat',cursive;font-size:1.1rem;color:var(--ink2);}
+
+/* ─── ARTICLES ─── */
+.articles{background:var(--cream);}
+.articles-top{margin-bottom:3.5rem;}
+.articles-note{
+  max-width:420px;font-size:.88rem;line-height:1.75;
+  color:var(--ink2);font-weight:300;margin-top:.6rem;
+}
+.article-list{display:flex;flex-direction:column;}
+.article-item{
+  display:grid;grid-template-columns:56px 1fr 40px;
+  gap:1.8rem;align-items:center;
+  padding:1.8rem 0;
+  border-bottom:1px solid var(--sand2);
+  text-decoration:none;color:inherit;
+  transition:background .18s;
+}
+.article-item:first-child{border-top:1px solid var(--sand2);}
+.article-num{
+  font-family:'Caveat',cursive;
+  font-size:2.6rem;color:var(--terra-light);line-height:1;
+}
+.article-title{
+  font-family:'Lora',serif;
+  font-size:1.2rem;font-weight:400;color:var(--ink);
+  margin-bottom:.3rem;
+}
+.article-blurb{font-size:.8rem;color:var(--ink2);font-weight:300;line-height:1.65;}
+.article-pill{
+  background:var(--sand2);
+  font-family:'Caveat',cursive;
+  font-size:.95rem;color:var(--ink2);
+  padding:.2rem .6rem;
+  white-space:nowrap;text-align:center;
+}
 
 /* ─── CURRENTLY ─── */
 .currently{background:var(--terra-pale);}
@@ -486,59 +592,6 @@ footer{
 }
 .footer-links a:hover{color:var(--terra-light);}
 
-/* ─── RESUME MODAL ─── */
-#resume-modal{
-  display:none;position:fixed;inset:0;z-index:1000;
-  background:rgba(28,20,16,.85);
-  backdrop-filter:blur(6px);
-  align-items:center;justify-content:center;
-}
-#resume-modal.open{display:flex;}
-.resume-modal-inner{
-  position:relative;
-  width:min(720px,95vw);
-  max-height:90vh;
-  background:var(--cream);
-  display:flex;flex-direction:column;
-}
-.resume-modal-bar{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:.9rem 1.2rem;
-  border-bottom:1px solid var(--sand2);
-  flex-shrink:0;
-}
-.resume-modal-title{
-  font-family:'Caveat',cursive;
-  font-size:1.2rem;color:var(--ink2);
-}
-.resume-modal-close{
-  background:none;border:none;cursor:pointer;
-  font-size:1.4rem;color:var(--ink2);
-  line-height:1;padding:.2rem .5rem;
-  transition:color .2s;
-}
-.resume-modal-close:hover{color:var(--terra);}
-#resume-canvas-wrap{
-  overflow-y:auto;
-  max-height:calc(90vh - 80px);
-  padding:1.5rem;
-  background:var(--sand2);
-  display:flex;flex-direction:column;gap:1rem;
-  align-items:center;
-  user-select:none;
-  -webkit-user-select:none;
-}
-#resume-canvas-wrap canvas{
-  max-width:100%;
-  box-shadow:0 4px 20px rgba(28,20,16,.15);
-  display:block;
-}
-.resume-protected-note{
-  font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--ink2);opacity:.4;text-align:center;
-  padding:.6rem 0 0;flex-shrink:0;
-}
-
 /* ─── REVEAL ─── */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
 .reveal.in{opacity:1;transform:none;}
@@ -598,13 +651,13 @@ footer{
       <span class="hand" style="font-size:1.2rem;color:var(--terra)">third-year CS ✦</span>
     </div>
     <div class="hero-note">
-      <p>I study Computer Science at IP College, Delhi University. I spend most of my time thinking about data, building software, and trying to make technology that's actually <em>useful</em> - not just impressive.</p>
+      <p>I study Computer Science at IP College, Delhi University. I spend most of my time thinking about data, building software, and trying to make technology that's actually <em>useful</em> — not just impressive.</p>
       <span class="handnote">open to internships · graduating 2027</span>
     </div>
     <div class="hero-actions">
       <a href="#portfolio" class="btn btn-dark">see my work</a>
       <a href="#contact" class="btn btn-ghost">say hello</a>
-      <button onclick="openResume()" class="btn btn-ghost" style="cursor:pointer;font-family:inherit;">View Resume</button>
+      <a href="sanya_resume.pdf" download class="btn btn-ghost">download CV</a>
     </div>
   </div>
   <div class="hero-footer">
@@ -626,7 +679,7 @@ footer{
   <h2 class="s-title">At the edge of <em>data &amp; code</em></h2>
   <div class="about-layout">
     <div class="about-copy reveal">
-      <p>I'm in my third year of BSc Computer Science at Indraprastha College for Women. The subjects that actually stuck with me are the ones sitting at the crossroads of maths, systems, and real problems - Statistics, Machine Learning, Cloud Computing, Networks, AI.</p>
+      <p>I'm in my third year of BSc Computer Science at Indraprastha College for Women. The subjects that actually stuck with me are the ones sitting at the crossroads of maths, systems, and real problems — Statistics, Machine Learning, Cloud Computing, Networks, AI.</p>
       <p>Data work forces you to think <em>clearly.</em> Software development forces you to think <em>precisely.</em> I like having both pushing on each other.</p>
       <p>Outside coursework, I work with Power BI for visualisation, Python for analysis and scripting, and Canva for all things design. I've picked up certifications from Google Cloud, University of Maryland, and a few others along the way.</p>
       <p>I'm actively looking for internships in data analytics or software development. <a href="#contact">Let's talk →</a></p>
@@ -640,6 +693,8 @@ footer{
           <span class="tag">Operating Systems</span><span class="tag">Discrete Maths</span>
           <span class="tag">Data Analysis</span><span class="tag">Canva</span>
           <span class="tag">Cybersecurity</span><span class="tag">Excel</span>
+          <span class="tag">Flask</span><span class="tag">React</span>
+          <span class="tag">scikit-learn</span>
         </div>
       </div>
     </div>
@@ -722,23 +777,48 @@ footer{
 <section class="s portfolio" id="portfolio">
   <div class="s-chip">✦ selected work</div>
   <h2 class="s-title"><em>Things</em> I've made</h2>
-  <p class="portfolio-intro">A mix of design work, data projects, and software in progress. Updated as things get built and shipped - so check back.</p>
+  <p class="portfolio-intro">A mix of design work, data projects, and software in progress. Updated as things get built and shipped — so check back.</p>
 
   <div class="work-grid reveal">
-    <a href="https://canva.link/q47bspkpmvd6cvc" target="_blank" class="work-card featured">
-      <div class="work-card-img work-thumb-canva">
-        <div class="thumb-ltr">✦</div>
-        <div class="work-card-sticker">view on Canva ↗</div>
+    <!-- FEATURED: SpendSmart -->
+    <a href="https://sanya052.github.io/smart-expense-tracker" target="_blank" class="work-card featured">
+      <div class="work-card-img work-thumb-ai">
+        <div class="thumb-ltr" style="font-size:7rem;">₹</div>
+        <div class="work-card-sticker">live project ↗</div>
       </div>
       <div class="work-card-body">
-        <div class="work-card-eyebrow">Design · Content creation</div>
-        <div class="work-card-title">Canva Design Portfolio</div>
-        <p class="work-card-desc">Social media content, newsletters, visual projects. I care about design that's actually clear - not just pretty.</p>
-        <span class="work-card-link">open portfolio →</span>
+        <div class="work-card-eyebrow">Full-stack · ML · Python · React</div>
+        <div class="work-card-title">SpendSmart — AI Expense Tracker</div>
+        <p class="work-card-desc">Log daily expenses and let KMeans clustering surface patterns in your spending. The ML model groups transactions by category, amount, and day-of-week — then explains what it found in plain language.</p>
+        <div class="insight-quote">"Your top category is Housing (86.2%). You spend 3.6× more on Food on weekends than weekdays."</div>
+        <div class="tech-pills">
+          <span class="tech-pill">Flask</span>
+          <span class="tech-pill">SQLAlchemy</span>
+          <span class="tech-pill">JWT Auth</span>
+          <span class="tech-pill">scikit-learn KMeans</span>
+          <span class="tech-pill">React + Vite</span>
+          <span class="tech-pill">Chart.js</span>
+        </div>
+        <span class="work-card-link">open live site →</span>
       </div>
     </a>
 
     <div class="work-side">
+      <!-- Canva -->
+      <a href="https://canva.link/q47bspkpmvd6cvc" target="_blank" class="work-card">
+        <div class="work-card-img work-thumb-canva" style="height:155px;">
+          <div class="thumb-ltr" style="font-size:4rem;">✦</div>
+          <div class="work-card-sticker">view on Canva ↗</div>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-eyebrow">Design · Content creation</div>
+          <div class="work-card-title">Canva Design Portfolio</div>
+          <p class="work-card-desc">Social media content, newsletters, visual projects. Design that's clear, not just pretty.</p>
+          <span class="work-card-link">open portfolio →</span>
+        </div>
+      </a>
+
+      <!-- Data project WIP -->
       <div class="work-card" style="cursor:default;">
         <div class="work-card-img work-thumb-data" style="height:155px;">
           <div class="thumb-ltr" style="font-size:4rem;">∑</div>
@@ -746,19 +826,7 @@ footer{
         <div class="work-card-body">
           <div class="work-card-eyebrow">Data · Python · Power BI</div>
           <div class="work-card-title">Data Analysis Project</div>
-          <p class="work-card-desc">Exploring a dataset end-to-end - cleaning, analysing, visualising. Building towards something worth sharing.</p>
-          <span class="wip-badge"><span class="wip-dot"></span>in progress</span>
-        </div>
-      </div>
-
-      <div class="work-card" style="cursor:default;">
-        <div class="work-card-img work-thumb-dev" style="height:155px;">
-          <div class="thumb-ltr" style="font-size:4rem;">{}</div>
-        </div>
-        <div class="work-card-body">
-          <div class="work-card-eyebrow">Software development</div>
-          <div class="work-card-title">Dev Project</div>
-          <p class="work-card-desc">A software project taking shape. Details and link coming once it's ready to show.</p>
+          <p class="work-card-desc">Exploring a dataset end-to-end — cleaning, analysing, visualising. Building towards something worth sharing.</p>
           <span class="wip-badge"><span class="wip-dot"></span>in progress</span>
         </div>
       </div>
@@ -767,7 +835,7 @@ footer{
 
   <div class="wip-note reveal">
     <span style="font-size:1.6rem;">🛠</span>
-    <span class="wip-note-hand">more stuff in progress - this page updates as I build things</span>
+    <span class="wip-note-hand">more stuff in progress — this page updates as I build things</span>
   </div>
 </section>
 
@@ -778,12 +846,12 @@ footer{
   <div class="contact-layout reveal">
     <div class="contact-copy">
       <span class="hand-big">I'd love to hear from you.</span>
-      <p>I'm actively looking for internship opportunities in data analytics and software development. If you're hiring, collaborating, or just want to say hi - reach out directly. I reply to every message.</p>
+      <p>I'm actively looking for internship opportunities in data analytics and software development. If you're hiring, collaborating, or just want to say hi — reach out directly. I reply to every message.</p>
       <div class="contact-links">
-        <a href="mailto:sanyanigam05@gmail.com" class="contact-link">
+        <a href="mailto:sanyanigam0502@gmail.com" class="contact-link">
           <div>
             <div class="contact-link-label">Email</div>
-            <div class="contact-link-value">sanyanigam05@gmail.com</div>
+            <div class="contact-link-value">sanyanigam0502@gmail.com</div>
           </div>
           <span class="contact-link-arrow">↗</span>
         </a>
@@ -794,10 +862,10 @@ footer{
           </div>
           <span class="contact-link-arrow">↗</span>
         </a>
-        <a href="https://github.com/sanya052" target="_blank" class="contact-link">
+        <a href="https://sanya052.github.io/smart-expense-tracker" target="_blank" class="contact-link">
           <div>
-            <div class="contact-link-label">GitHub</div>
-            <div class="contact-link-value">github.com/sanya052</div>
+            <div class="contact-link-label">Featured project</div>
+            <div class="contact-link-value">SpendSmart — AI Expense Tracker</div>
           </div>
           <span class="contact-link-arrow">↗</span>
         </a>
@@ -840,18 +908,6 @@ footer{
   </div>
 </section>
 
-<!-- RESUME MODAL -->
-<div id="resume-modal" role="dialog" aria-modal="true" aria-label="Resume viewer">
-  <div class="resume-modal-inner">
-    <div class="resume-modal-bar">
-      <span class="resume-modal-title">Sanya - Resume</span>
-      <button class="resume-modal-close" onclick="closeResume()" aria-label="Close">&times;</button>
-    </div>
-    <div id="resume-canvas-wrap"></div>
-    <p class="resume-protected-note">view only - not available for download</p>
-  </div>
-</div>
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-left">
@@ -859,7 +915,7 @@ footer{
     <span class="hand-note">made with care, one commit at a time ✦</span>
   </div>
   <ul class="footer-links">
-    <li><a href="mailto:sanyanigam05@gmail.com">Email</a></li>
+    <li><a href="mailto:sanyanigam0502@gmail.com">Email</a></li>
     <li><a href="https://www.linkedin.com/in/sanya-b427612b7" target="_blank">LinkedIn</a></li>
     <li><a href="#hero">Back to top ↑</a></li>
   </ul>
@@ -870,8 +926,7 @@ footer{
 const progressBar = document.getElementById('progress-bar');
 const nav = document.getElementById('main-nav');
 const navLinks = document.querySelectorAll('.nav-links a[data-section]');
-/* FIX: removed 'articles' which had no matching section */
-const sections = ['about','portfolio','contact'];
+const sections = ['about','portfolio','articles','contact'];
 
 window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY;
@@ -899,61 +954,6 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: .1 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 document.querySelector('.hero .reveal')?.classList.add('in');
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-<script>
-/* ─── PDF.js setup ─── */
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
-async function openResume() {
-  const modal = document.getElementById('resume-modal');
-  const wrap  = document.getElementById('resume-canvas-wrap');
-  modal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-
-  if (wrap.children.length > 0) return; /* already rendered */
-
-  try {
-    const pdf = await pdfjsLib.getDocument('sanya_resume.pdf').promise;
-    for (let i = 1; i <= pdf.numPages; i++) {
-      const page     = await pdf.getPage(i);
-      const viewport = page.getViewport({ scale: 1.8 });
-      const canvas   = document.createElement('canvas');
-      canvas.width   = viewport.width;
-      canvas.height  = viewport.height;
-      wrap.appendChild(canvas);
-      await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
-    }
-  } catch (e) {
-    wrap.innerHTML = '<p style="padding:2rem;font-family:\'Caveat\',cursive;font-size:1.2rem;color:var(--ink2);">Could not load resume. Please try again later.</p>';
-  }
-}
-
-function closeResume() {
-  document.getElementById('resume-modal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-/* Close on backdrop click */
-document.getElementById('resume-modal').addEventListener('click', function(e) {
-  if (e.target === this) closeResume();
-});
-
-/* Close on Escape */
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeResume();
-});
-
-/* ─── Protections ─── */
-/* Disable right-click */
-document.addEventListener('contextmenu', e => e.preventDefault());
-
-/* Disable Ctrl+S, Ctrl+P, Ctrl+C, Ctrl+U, F12 */
-document.addEventListener('keydown', e => {
-  const blocked = (e.ctrlKey || e.metaKey) && ['s','p','c','u','a'].includes(e.key.toLowerCase());
-  const devtools = e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i','j','c'].includes(e.key.toLowerCase()));
-  if (blocked || devtools) e.preventDefault();
-});
 </script>
 </body>
 </html>
